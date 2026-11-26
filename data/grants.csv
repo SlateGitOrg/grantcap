@@ -1,0 +1,8 @@
+id,name,funder_type,award,period_start,period_end,indirect_rate_cap,priority
+G01,Federal family support pass-through (prior award year),federal,77000,2024-10-01,2025-09-30,0.18,1
+G02,Federal family support pass-through,federal,900000,2025-10-01,2026-09-30,0.18,2
+G03,State child welfare services,state,513000,2025-07-01,2026-06-30,0.15,3
+G04,Community foundation general support,foundation,60000,2025-07-01,2026-06-30,0.1,4
+G05,Family foundation youth initiative (nine months),foundation,242000,2025-07-01,2026-03-31,0.1,5
+G06,State early childhood and housing services,state,514000,2025-07-01,2026-06-30,0.15,6
+G07,County human services contract,county,308500,2025-07-01,2026-06-30,0,7

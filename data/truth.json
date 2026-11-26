@@ -1,0 +1,92 @@
+{
+  "seed": 7,
+  "gap_by_month": [
+    {
+      "month": 1,
+      "direct_shortfall": 104026.23,
+      "indirect_under_recovery": 8422.27,
+      "total": 112448.5
+    },
+    {
+      "month": 2,
+      "direct_shortfall": 104026.23,
+      "indirect_under_recovery": 8422.27,
+      "total": 112448.5
+    },
+    {
+      "month": 3,
+      "direct_shortfall": 104026.23,
+      "indirect_under_recovery": 8493.71,
+      "total": 112519.94
+    },
+    {
+      "month": 4,
+      "direct_shortfall": 47012.75,
+      "indirect_under_recovery": 8493.71,
+      "total": 55506.47
+    },
+    {
+      "month": 5,
+      "direct_shortfall": 47012.75,
+      "indirect_under_recovery": 8842.96,
+      "total": 55855.72
+    },
+    {
+      "month": 6,
+      "direct_shortfall": 47012.75,
+      "indirect_under_recovery": 8842.96,
+      "total": 55855.72
+    },
+    {
+      "month": 7,
+      "direct_shortfall": 48423.14,
+      "indirect_under_recovery": 9108.25,
+      "total": 57531.39
+    },
+    {
+      "month": 8,
+      "direct_shortfall": 48423.14,
+      "indirect_under_recovery": 10265.92,
+      "total": 58689.06
+    },
+    {
+      "month": 9,
+      "direct_shortfall": 82354.09,
+      "indirect_under_recovery": 9247.99,
+      "total": 91602.08
+    },
+    {
+      "month": 10,
+      "direct_shortfall": 129268.62,
+      "indirect_under_recovery": 6808.38,
+      "total": 136077.0
+    },
+    {
+      "month": 11,
+      "direct_shortfall": 129268.62,
+      "indirect_under_recovery": 6808.38,
+      "total": 136077.0
+    },
+    {
+      "month": 12,
+      "direct_shortfall": 129268.62,
+      "indirect_under_recovery": 6808.38,
+      "total": 136077.0
+    }
+  ],
+  "total_indirect_under_recovery": 100565.21,
+  "g03": {
+    "award": 513000.0,
+    "exhaustion_month": 9,
+    "unfunded_direct_after_exhaustion": 203156.58,
+    "requested_including_indirect": 746630.07
+  },
+  "g05": {
+    "period_end": "2026-03-31",
+    "unfunded_direct_apr_jun": 73310.83
+  },
+  "g06": {
+    "award": 514000.0,
+    "unspent_balance": 55136.64
+  }
+}
