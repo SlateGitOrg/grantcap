@@ -46,7 +46,7 @@ The workbook has eight sheets:
 | `Summary` | Gap by month and program, grant burn-down, exhaustion month and unspent balance per grant |
 | `Checks` | Funding identity per month, awards not exceeded, no charges outside a period, reconciliations |
 
-Only these functions appear in formulas: `SUM`, `SUMPRODUCT`, `IF`, `MIN`, `MAX`, `ROUND`, `INDEX`, `MATCH`, `AND`. A test enforces the list. Grant blocks on `Charges` are contiguous, so "everything charged to this grant so far" is a plain `SUM` over a range. The default dataset produces about 3,300 formula cells.
+Only these functions appear in formulas: `SUM`, `SUMPRODUCT`, `IF`, `MIN`, `MAX`, `ROUND`, `INDEX`, `MATCH`, `AND`. A test enforces the list. Grant blocks on `Charges` are contiguous, so "everything charged to this grant so far" is a plain `SUM` over a range. The default dataset produces 3,341 formula cells, of which `verify` compares the 3,284 on the calculation sheets; a test requires the count to stay between 3,000 and 3,500.
 
 ## Quick start
 
@@ -134,7 +134,7 @@ The injected patterns, recorded in `data/truth.json` and recovered by the tests:
 - **Row order inside a grant is the charge order, and it only changes who carries the gap.** When an award runs short mid-month, earlier rows are charged first. The total and monthly gap are the same for any order, which a property test checks with ten seeded permutations while also asserting that per-position charges do change. Priority on `grants.csv` orders the blocks on `Charges`; it does not change totals.
 - **A month is in period only if the grant covers the whole month.** Periods that start or end mid-month are treated conservatively, with no partial-month proration. This keeps the in-period flag a single `AND` and avoids a proration convention that funders define differently.
 - **Under-recovery is defined on direct charges to grants.** It is (negotiated - effective rate) x direct charges. Indirect cost on salaries that no grant carries is not added, so the figure measures what funder caps cost, not total overhead. A renewal therefore lowers the direct shortfall by exactly the renewal's direct charges but raises under-recovery by the cap difference.
-- **Verification recalculates the file instead of trusting the builder.** `verify` runs the workbook through the `formulas` engine and compares each formula cell on the calculation sheets with the reference. It also fails if a cell the reference expects to be a formula holds a typed number. The engine is not Excel, so numbers are compared to $0.01 and only the nine whitelisted functions are used.
+- **Verification recalculates the file instead of trusting the builder.** `verify` runs the workbook through the `formulas` engine and compares each formula cell on the calculation sheets with the reference. It also fails if a cell the reference expects to be a formula holds a typed number. The engine is not Excel, so numbers are compared to $0.01 and only the nine whitelisted functions are used. `recalculate` suppresses all warnings while importing and running `formulas` (it emits SyntaxWarnings at import); the test suite otherwise treats warnings as errors.
 - **Cached values are absent.** openpyxl writes formulas without results, so the workbook is set to recalculate on open. Excel and LibreOffice do this on load; a viewer that does not calculate will show empty cells.
 
 ## Testing
